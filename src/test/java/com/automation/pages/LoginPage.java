@@ -14,6 +14,9 @@ public class LoginPage extends BasePage {
     @FindBy(id = "test-LOGIN")
     WebElement loginBtn;
 
+    @FindBy(id = "test-Error message")
+    WebElement lockedOutErrorMsg;
+
     public void openApplication() {
         // Intentionally blank for future use
     }
@@ -26,5 +29,13 @@ public class LoginPage extends BasePage {
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);
         loginBtn.click();
+    }
+
+    public boolean isLockedOutUserErrorMsgDisplayed() {
+        return lockedOutErrorMsg.isDisplayed();
+    }
+
+    public String getLockedOutErrorMsg() {
+        return lockedOutErrorMsg.getText();
     }
 }

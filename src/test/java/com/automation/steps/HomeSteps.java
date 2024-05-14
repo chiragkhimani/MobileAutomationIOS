@@ -1,7 +1,9 @@
 package com.automation.steps;
 
 import com.automation.pages.HomePage;
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
 import org.junit.Assert;
 
 public class HomeSteps {
@@ -10,5 +12,15 @@ public class HomeSteps {
     @Then("verify user is on home screen")
     public void verify_user_is_on_home_screen() {
         Assert.assertTrue(homePage.isHomeScreenDisplayed());
+    }
+
+    @When("user click on home burger menu")
+    public void userClickOnHomeBurgerMenu() {
+        homePage.clickOnHomeBurgerMenu();
+    }
+
+    @And("click on logout link")
+    public void clickOnLogoutLink() {
+        homePage.clickOnLogoutLink();
     }
 }

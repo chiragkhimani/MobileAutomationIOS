@@ -26,5 +26,9 @@ public class LoginSteps {
     }
 
 
-
+    @Then("verify locked out user error message is displayed")
+    public void verifyLockedOutUserErrorMessageIsDisplayed(String message) {
+        Assert.assertTrue(loginPage.isLockedOutUserErrorMsgDisplayed());
+        Assert.assertEquals(message, loginPage.getLockedOutErrorMsg());
+    }
 }
